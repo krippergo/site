@@ -10,7 +10,7 @@ app.listen(port, function () {
 app.use(express.static(`public`));
 
 app.get('/', function (req, res) {
-    let ip = req.ip;
+    let ip = req.socket.remoteAddress;
 
     res.send(ip);
 });
